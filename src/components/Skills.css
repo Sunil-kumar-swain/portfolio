@@ -1,0 +1,83 @@
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+}
+
+.skills__card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+  height: 100%;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.skills__card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 16px 40px var(--shadow);
+}
+
+.skills__card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.skills__group {
+  font-size: 0.95rem;
+  color: var(--accent);
+}
+
+/* Animated "signal" indicator — lit bars = how many skills live in this
+   group. Not a proficiency claim, just a visual density cue. */
+.skills__signal {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 14px;
+}
+
+.skills__signal-bar {
+  width: 3px;
+  height: 100%;
+  border-radius: 2px;
+  background: var(--border);
+  transform: scaleY(0.3);
+  transform-origin: bottom;
+  opacity: 0.5;
+  transition: transform 0.4s ease, opacity 0.4s ease, background-color 0.4s ease;
+}
+
+.skills__signal-bar.is-lit {
+  background: linear-gradient(180deg, var(--accent), var(--accent-2));
+  transform: scaleY(1);
+  opacity: 1;
+}
+
+.skills__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skills__chip {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  padding: 6px 11px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skills__chip:hover {
+  transform: translateY(-2px) scale(1.04);
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 6px 16px var(--shadow);
+}
